@@ -5,20 +5,22 @@
 2.Записала в файл:
 
 <img width="509" alt="Снимок экрана 2024-11-28 в 12 33 58" src="https://github.com/user-attachments/assets/de1fc55a-f3d6-4c9e-8e47-d0423396a972">
+
 В данном файле написано :
 FROM ubuntu:latest - Указывает базовый образ для создания нового Docker-образа.Используется последний доступный образ Ubuntu.
+
 RUN apt-get update && apt-get install -y libaa-bin && apt-get install -y iputils-ping - эта команда выполняется внутри контейнера на этапе его сборки. Что качается команды по частям :
+
 apt-get update: Обновляет список доступных пакетов в менеджере apt. Это нужно, чтобы получить самую свежую информацию о версиях.
-apt-get install -y libaa-bin: Устанавливает пакет libaa-bin.
-В пакете libaa-bin содержится aafire.
+
+apt-get install -y libaa-bin: Устанавливает пакет libaa-bin.В пакете libaa-bin содержится aafire.
+
 apt-get install -y iputils-ping: Устанавливает утилиту ping, которая позволяет проверять доступность сетевых узлов.
 Флаг -y: Указывает системе автоматически подтверждать установку пакетов (без запроса от пользователя).
 
 3. Создала образ, затем запустила контейнер.
    
 <img width="567" alt="Снимок экрана 2024-11-28 в 12 53 20" src="https://github.com/user-attachments/assets/955309d6-fb25-4ff9-bcb1-3118190a3a9f">
-
-<img width="523" alt="Снимок экрана 2024-11-28 в 12 54 01" src="https://github.com/user-attachments/assets/d9dbbeda-305b-42f4-84c3-1594ba6688a8">
 
 В интерактивном режиме docker run -it aafire-ping запустила контейнер и получила 
 
